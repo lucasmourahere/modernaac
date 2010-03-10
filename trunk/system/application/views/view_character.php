@@ -7,7 +7,7 @@ require_once("system/application/config/create_character.php");
 	if($player->isNameLocked()) alert("This character has been name locked.");
 
 ?>
-
+<div class='bar'>Character</div>
 <table width='100%'>
 	<tr><td width='30%'>Name</td><td><?php echo $player->getName();?></td></tr>
 	<tr><td width='30%'>Sex</td><td><?php echo $sex = ($player->getSex() == 1) ? "Male" : "Female" ?></td></tr>
@@ -30,5 +30,14 @@ require_once("system/application/config/create_character.php");
 	<tr><td width='30%'>Created</td><td><?php echo UNIX_TimeStamp($player->getCreated()); ?></td></tr>
 </table>
 <?php 
+	$GLOBALS['player'] = $player;
+	$ide = new IDE;
+	try {
+		$ide->loadInjections("character_view");
+	}
+		catch(Exception $e) {
+			error($e->getMessage());
+		}
+	
 }
 ?>
