@@ -166,9 +166,6 @@ class Character extends Controller {
 			$this->load->helper("form");
 				if($_POST) {
 					$name = $_POST['name'];
-					if(in_array(strtolower($name), $config['restricted_names']))
-						error("$name could not be found.");
-					else {
 					$ots = POT::getInstance();
 					$ots->connect(POT::DB_MYSQL, connection());
 					$player = new OTS_Player();
@@ -179,7 +176,7 @@ class Character extends Controller {
 					else {
 						error("$name could not be found.");
 					}
-					}
+					
 				}
 			$this->load->view('character_search.php');
 		}
