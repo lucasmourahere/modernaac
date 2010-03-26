@@ -1,8 +1,10 @@
 <?php
+$config = array();
+$config['server_name'] = "Server Name";
 $config['cities'] = array(1=>'Main City');
 $config['vocations'] = array(1=>"Sorcerer", 2=>"Druid", 3=>"Paladin", 4=>"Knight");
 $config['restricted_names'] = array("gamemaster", "admin", "account manager");
-$config['worlds'] = array(1=>"World Name", 2=>"Second World");
+$config['worlds'] = array(0=>"World Name", 1=>"Second World");
 $config['groups'] = array(0=>"Player", 2=>"Tutor", 3=>"Senior Tutor", 4=>"Gamemaster", 5=>"Community Manager", 6=>"God");
 $config['server_vocations'] = array(1=>"Sorcerer", 2=>"Druid", 3=>"Paladin", 4=>"Knight", 5=>"Master Sorcerer", 6=>"Elder Druid", 7=>"Royal Paladin", 8=>"Elite Knight");
 $config['newchar_vocations'][1][0] = "Rook Sample";
