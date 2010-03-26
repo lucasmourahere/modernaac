@@ -49,7 +49,7 @@
 				{/if}
 				<li><a href="{$path}/index.php/character/view">Characters</a></li>
 				<li><a href="{$path}/index.php/character/online">Who is Online</a></li>
-				<li><a href="guilds">Guilds</a></li>
+				<li><a href="{$path}/index.php/guilds">Guilds</a></li>
 				<li><a href="index.html">About</a></li>		
 			</ul>
 		</div>					
