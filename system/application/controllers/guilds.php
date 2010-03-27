@@ -11,9 +11,10 @@ class Guilds extends Controller {
 		$this->load->view("guilds", $data);
 	}
 	
-	public function view($id = null) {
+	public function view($id = null, $action = 0) {
 		$ide = new IDE;
 		if(empty($id)) $ide->redirect('../');
+		if($action == 1) { success("You have joined the guild."); echo "<br />";}
 		$ots = POT::getInstance();
 		$ots->connect(POT::DB_MYSQL, connection());
 		$guild = $ots->createObject('Guild');
@@ -65,6 +66,28 @@ class Guilds extends Controller {
 		$data['config'] = $config;
 		$this->load->view("create_guild", $data);
 		
+	}
+	
+	public function join($guild_name, $player_name) {
+		$guild_name = (int)$guild_name;
+		$player_name = (int)$player_name;
+		$ide = new IDE;
+		if(empty($guild_name) or empty($player_name)) $ide->redirect(WEBSITE."/index.php/guilds");
+		$ots = POT::getInstance();
+		$ots->connect(POT::DB_MYSQL, connection());
+		$guild = $ots->createObject('Guild');
+		$guild->load($guild_name);
+		if(!$guild->isLoaded()) $ide->redirect(WEBSITE."/index.php/guilds");
+		$player = new OTS_Player();
+		$player->load($player_name);
+		if(!$player->isLoaded()) $ide->redirect(WEBSITE."/index.php/guilds");
+		if($player->getAccount()->getId() != $_SESSION['account_id']) $ide->redirect(WEBSITE."/index.php/guilds");
+		require_once('system/application/libraries/POT/InvitesDriver.php');
+		new InvitesDriver($guild);
+		$invited_list = $guild->listInvites();
+		if(!in_array($player->getId(), $invited_list)) $ide->redirect(WEBSITE."/index.php/guilds");
+		$guild->acceptInvite($player);
+		$ide->redirect(WEBSITE."/index.php/guilds/view/".$guild->getId()."/1");
 	}
 
 }
