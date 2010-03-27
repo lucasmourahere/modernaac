@@ -19,6 +19,7 @@ class Character_model extends Model {
 	}
 	
 	
+	
 }
 
 ?>
