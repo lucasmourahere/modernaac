@@ -12,6 +12,7 @@ $config['newchar_vocations'][1][1] = "Sorcerer Sample";
 $config['newchar_vocations'][1][2] = "Druid Sample";
 $config['newchar_vocations'][1][3] = "Paladin Sample";
 $config['newchar_vocations'][1][4] = "Knight Sample";
+$config['levelToCreateGuild'] = 50;
 $startPos['x'] = 1000;
 $startPos['y'] = 1000;
 $startPos['z'] = 7;
@@ -197,5 +198,5 @@ $info[4] = array(
 'deleted'=>'0',
 'description'=>'',
 );
-
+@DEFINE('LEVELTOCREATEGUILD', $config['levelToCreateGuild']);
 ?>
