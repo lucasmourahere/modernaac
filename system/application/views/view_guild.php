@@ -35,7 +35,42 @@ $logo = (file_exists("public/guild_logos/".$guild->getId().".gif")) ? "<img src=
 	}
 	else {
 
+		require_once('system/application/libraries/POT/InvitesDriver.php');
+		new InvitesDriver($guild);
+		$invited_list = $guild->listInvites();
+		if(count($invited_list) == 0)
+			echo "<center><b>This guild did not invite anyone.</b></center>";
+		else {
+		$ots = POT::getInstance();
+		$ots->connect(POT::DB_MYSQL, connection());
+		$account_logged = new OTS_Account();
+		$account_logged->load($_SESSION['account_id']);
+		$account_players = $account_logged->getPlayers();
+		echo "<table width='100%'>";
+		echo "<tr><td><center><b>Name</b></center></td><td><center><b>Join</b></center></td></tr>";
+		$characters = array();
+		foreach($account_players as $player_from_acc) {
+			$characters[] = $player_from_acc->getName();
+		}
 		
+		foreach($invited_list as $invited_player)
+			{
+				
+						
+						
+						if(in_array($invited_player->getName(), $characters)) {
+							echo "<tr><td><center><a href='".WEBSITE."/index.php/character/view/".$invited_player->getName()."'>".$invited_player->getName()."</a></center></td><td><center><a href='".WEBSITE."/index.php/guilds/join/".$guild->getId()."/".$invited_player->getId()."'>Join</a></center></td></tr>";
+							
+						}
+						else {
+							echo "<tr><td><center><a href='".WEBSITE."/index.php/character/view/".$invited_player->getName()."'>".$invited_player->getName()."</a></center></td><td><center>Cannot join</center></td></tr>";
+						
+						}
+				
+				
+			}
+		echo "</table>";
+		}
 	
 	}
 ?>
