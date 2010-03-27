@@ -1,9 +1,16 @@
 <?php
 require_once("system/application/config/create_character.php");
+/*Setting global to alllow plugins to access guild list.*/
+$GLOBALS['guilds'] = $guilds;
 $ide = new IDE;
 	try { $ide->loadInjections("guilds_index"); }
 	catch(Exception $e) { error($e->getMessage());}
 
+	if(!$ide->isLogged()){alert("You need to be logged in to create guild.");} else {
+
+		echo "<a class='createGuildLink' href='guilds/create'>Create Guild</a>";
+	
+	}
 if(count($config['worlds'] > 1)) {
 	echo form_open("guilds", array('method'=>'post'));
 	echo "<label>World:</label>";

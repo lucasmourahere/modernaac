@@ -30,5 +30,12 @@ $logo = (file_exists("public/guild_logos/".$guild->getId().".gif")) ? "<img src=
 		}
 	echo "</table>";
 		
+	if(!$ide->isLogged()) {
+		alert("You need to be logged in to access any options.");
+	}
+	else {
+
 		
+	
+	}
 ?>
