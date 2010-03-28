@@ -9,6 +9,8 @@ class Account_model extends Model {
 	function check_login() {
 		$this->load->database();
 		$sql = $this->db->query("SELECT `id` FROM `accounts` WHERE `name` = '".$_POST['name']."' AND `password` = '".$_POST['pass']."'");
+		$row = $sql->result();
+		$_SESSION['account_id'] = $row->id;
 		if($sql->num_rows == 0) return false; else return true;
 	}
 	
