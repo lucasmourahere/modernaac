@@ -10,7 +10,7 @@ function error($string) {
 	$string = str_replace("</p>", "<br>", $string);
 	echo '<div class="ui-widget">
 			<div class="ui-state-error ui-corner-all" style="padding: 0 .7em; font-size: 12px;"> 
-				<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span> 
+				<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em; color:black;"></span> 
 				<strong>Error:</strong><br>'.$string.'</p>
 			</div>
 		</div>';
@@ -23,7 +23,7 @@ function alert($string) {
 	$string = str_replace("</p>", "<br>", $string);
 	echo '<div class="ui-widget">
 			<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em; font-size: 12px;"> 
-				<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+				<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em; color:black;"></span>
 				<strong>Alert:</strong><br>'.$string.'</p>
 			</div>
 		</div>';
@@ -36,7 +36,7 @@ function success($string) {
 	$string = str_replace("</p>", "<br>", $string);
 	echo '<div class="ui-widget">
 			<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding: 0 .7em; font-size: 12px; border-color: green; background: #ecfde8;"> 
-				<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+				<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em; color:black;"></span>
 				<strong>Success:</strong><br>'.$string.'</p>
 			</div>
 		</div>';
