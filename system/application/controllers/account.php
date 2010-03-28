@@ -55,7 +55,7 @@ If you do NOT understand the code, do NOT change anything in here.
 					$name = $account->createNamed($_POST['name']);
 					$account->setPassword($_POST['password']);
 					$account->setEmail($_POST['email']);
-					$account->setPremiumEnd(PREMDAYS);
+					$account->setCustomField('premdays', PREMDAYS);
 					try {
 						$account->save();
 						$_SESSION['logged'] = 1;
