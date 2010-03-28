@@ -33,14 +33,14 @@
 | The $active_record variables lets you determine whether or not to load
 | the active record class
 */
-
+require("config.php");
 $active_group = "default";
 $active_record = TRUE;
 
-$db['default']['hostname'] = "localhost";
-$db['default']['username'] = "root";
-$db['default']['password'] = "kubus00";
-$db['default']['database'] = "acc";
+$db['default']['hostname'] = HOSTNAME;
+$db['default']['username'] = USERNAME;
+$db['default']['password'] = PASSWORD;
+$db['default']['database'] = DATABASE;
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['pconnect'] = TRUE;
@@ -49,14 +49,7 @@ $db['default']['cache_on'] = FALSE;
 $db['default']['cachedir'] = "";
 $db['default']['char_set'] = "utf8";
 $db['default']['dbcollat'] = "utf8_general_ci";
-if(!defined('HOSTNAME'))
-DEFINE('HOSTNAME', $db['default']['hostname']);
-if(!defined('USERNAME'))
-DEFINE('USERNAME', $db['default']['username']);
-if(!defined('PASSWORD'))
-DEFINE('PASSWORD', $db['default']['password']);
-if(!defined('DATABASE'))
-DEFINE('DATABASE', $db['default']['database']);
+
 
 
 /* End of file database.php */
