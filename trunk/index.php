@@ -5,6 +5,7 @@ $time = microtime();
 $time = explode(" ", $time); 
 $time = $time[1] + $time[0]; 
 $start = $time; 
+require("config.php");
 /*
 |---------------------------------------------------------------
 | PHP ERROR REPORTING LEVEL
@@ -48,16 +49,16 @@ $start = $time;
 /* 	
 | Define template name
  */
-	$template = "default";
+	$template = $config['layout'];
 	
 /* Full website address including HTTP:// Without slash at the end! */
-	$website = "http://127.0.0.1/ide";
+	$website = $config['website'];
 	
 /* Default time zone for the server must be set here. */
 	date_default_timezone_set("Europe/London");
 
 /* Set the default title of a website. */
-	$title = "Modern AAC - Powered by IDE Engine";
+	$title = $config['title'];
 /*
 |===============================================================
 | END OF USER CONFIGURABLE SETTINGS
@@ -130,6 +131,7 @@ else
 | And away we go...
 |
 */
+
 require_once(APPPATH.'/libraries/system.php');
 require(APPPATH."libraries/POT/OTS.php");
 require_once BASEPATH.'codeigniter/CodeIgniter'.EXT;
