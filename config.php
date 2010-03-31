@@ -7,12 +7,13 @@ $config['vocations'] = array(1=>"Sorcerer", 2=>"Druid", 3=>"Paladin", 4=>"Knight
 $config['restricted_names'] = array("gamemaster", "admin", "account manager");
 $config['worlds'] = array(0=>"World Name", 1=>"Second World");
 $config['groups'] = array(0=>"Player", 2=>"Tutor", 3=>"Senior Tutor", 4=>"Gamemaster", 5=>"Community Manager", 6=>"God");
-$config['server_vocations'] = array(1=>"Sorcerer", 2=>"Druid", 3=>"Paladin", 4=>"Knight", 5=>"Master Sorcerer", 6=>"Elder Druid", 7=>"Royal Paladin", 8=>"Elite Knight");
+$config['server_vocations'] = array(0=>"None", 1=>"Sorcerer", 2=>"Druid", 3=>"Paladin", 4=>"Knight", 5=>"Master Sorcerer", 6=>"Elder Druid", 7=>"Royal Paladin", 8=>"Elite Knight");
 $config['newchar_vocations'][1][0] = "Rook Sample";
 $config['newchar_vocations'][1][1] = "Sorcerer Sample";
 $config['newchar_vocations'][1][2] = "Druid Sample";
 $config['newchar_vocations'][1][3] = "Paladin Sample";
 $config['newchar_vocations'][1][4] = "Knight Sample";
+$config['players_group_id_block'] = 3;
 $config['levelToCreateGuild'] = 50;
 $config['database']['host'] = "localhost";
 $config['database']['login'] = "root";
