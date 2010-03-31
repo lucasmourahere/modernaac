@@ -1,5 +1,8 @@
 <?php
-require_once("system/application/config/create_character.php");
+require("system/application/config/create_character.php");
+$GLOBALS['players'] = $players;
+$ide = new IDE;
+	try { $ide->loadInjections("players_online"); } catch(Exception $e) { error($e->getMessage()); }
 echo form_open("character/online", array('method'=>'get'));
 if(count($config['worlds']) >1) {
 	echo "<label>World</label><select name='world'>";

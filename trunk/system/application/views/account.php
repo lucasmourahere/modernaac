@@ -1,4 +1,7 @@
 <?php 
+$GLOBALS['characters'] = $characters;
+$ide = new IDE;
+try { $ide->loadInjections("account"); } catch(Exception $e) { error($e->getMessage()); }
 	echo "<h2>Hello $loggedUser</h2>";
 	echo "<a href='".WEBSITE."/index.php/character/create_character'>Create character</a><br />";
 	echo "<a href='".WEBSITE."/index.php/account/logout'>Logout</a>";
