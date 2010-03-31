@@ -329,3 +329,9 @@ form.search input.button {
 .clear { clear: both; }
 .gray { color: #CCC; }
 
+.bar {
+font-weight: bold;
+margin-top: 5px;
+margin-left: 10px;
+font-size: 12px;
+}
