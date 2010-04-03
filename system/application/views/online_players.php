@@ -5,21 +5,21 @@ $ide = new IDE;
 	try { $ide->loadInjections("players_online"); } catch(Exception $e) { error($e->getMessage()); }
 echo form_open("character/online", array('method'=>'get'));
 if(count($config['worlds']) >1) {
-	echo "<label>World</label><select name='world'>";
+	echo "<b>World </b> &nbsp; <select name='world'>";
 	echo "<option value=''>All</optino>";
 	foreach($config['worlds'] as $key=>$value) {
 		echo "<option value='$key'>$value</optino>";
 	}
-	echo "</select><br>";
+	echo "</select>&nbsp; &nbsp;";
 	
 }
-echo "<label>Sort by</label><select name='sort'>";
+echo "<b>Sort by </b> &nbsp; <select name='sort'>";
 echo "<option value=''>None</option>";
 echo "<option value='level'>Level</option>";
 echo "<option value='Vocation'>Profession</option>";
 echo "<option value='name'>Name</option>";
 echo "</select>";
-echo "<br><label></label><input type='submit' value='Order'>";
+echo "&nbsp; <input type='submit' value='Order'>";
 echo "</form>";
 
 echo "</form>";
