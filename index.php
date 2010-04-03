@@ -6,6 +6,7 @@ $time = explode(" ", $time);
 $time = $time[1] + $time[0]; 
 $start = $time; 
 require("config.php");
+
 /*
 |---------------------------------------------------------------
 | PHP ERROR REPORTING LEVEL
@@ -131,11 +132,10 @@ else
 | And away we go...
 |
 */
-
+require_once(APPPATH.'/libraries/Smarty.class.php');
 require_once(APPPATH.'/libraries/system.php');
 require(APPPATH."libraries/POT/OTS.php");
 require_once BASEPATH.'codeigniter/CodeIgniter'.EXT;
-require_once(APPPATH.'/libraries/Smarty.class.php');
 $contents = ob_get_contents();
 ob_end_clean();
 require_once(APPPATH.'config/database.php');
@@ -147,9 +147,10 @@ $smarty->config_dir = ' configs';
 $smarty->cache_dir = 'cache';
 $smarty->compile_dir = 'compile';
 @$logged = ($_SESSION['logged'] == 1) ? 1 : 0;
-$head = '<link type="text/css" href="'.$website.'/public/css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" /><script type="text/javascript" src="'.$website.'public/js/jquery-1.3.2.min.js"></script><script type="text/javascript" src="public/js/jquery-ui-1.7.2.custom.min.js"></script>';
+$head = '<link type="text/css" href="'.$website.'/public/css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" /><script type="text/javascript" src="'.$website.'/public/js/jquery-1.3.2.min.js"></script><script type="text/javascript" src="'.$website.'public/js/jquery-ui-1.7.2.custom.min.js"></script>';
 $smarty->assign('head', $head);
 $smarty->assign('path', $website);
+$smarty->assign('template_path', $website.'/templates/'.$config['layout']);
 $smarty->assign('logged', $logged);
 $smarty->assign('main', $contents);
 $time = microtime(); 
