@@ -18,7 +18,11 @@ If you do NOT understand the code, do NOT change anything in here.
 			$data = array();
 			$data['loggedUser'] = $_SESSION['name'];
 			$data['characters'] = $this->Account_model->getCharacters();
-			/* TODO - GET REST OF THE DATA FROM DB AND SEND IT TO VIEW. */
+			$ots = POT::getInstance();
+			$ots->connect(POT::DB_MYSQL, connection());
+			$account = $ots->createObject('Account');
+			$account->find($_SESSION['name']);
+			$data['account'] = $account;
 			$recovery_key = $this->Account_model->getRecoveryKey($_SESSION['name']);
 			if($recovery_key == 0) alert("You don't have recovery key set up. Click <a href='account/generate_recovery_key'><b>here</b></a> to create one. We strongly recommend to create one now for security reasons.");
 			/* Load view of account page and send data to it. */
