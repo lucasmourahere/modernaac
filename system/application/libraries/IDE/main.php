@@ -20,7 +20,8 @@ class IDE{
 	
 	public function loadInjections($name) {
 		if(is_dir("injections/$name")) {
-				foreach($this->dir_list("injections/$name") as $injection) {
+			$folders = $this->dir_list("injections/$name");
+				foreach($folders as $injection) {
 					if(!file_exists("injections/$name/$injection/injection.php"))
 						continue;
 					else
