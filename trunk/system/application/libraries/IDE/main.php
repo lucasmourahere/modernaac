@@ -15,7 +15,7 @@ class IDE{
 	public function dir_list($d){ 
        foreach(array_diff(scandir($d),array('.','..')) as $f)
 			if(is_dir($d.'/'.$f))$l[]=$f; 
-			return $l; 
+			return @$l; 
 	} 
 	
 	public function loadInjections($name) {
