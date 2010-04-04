@@ -91,8 +91,8 @@ else
 	$system_folder = str_replace("\\", "/", $system_folder); 
 }
 
-if(!file_exists("templates/$template/index.tpl")) {
-	echo "Template could not be loaded."; exit;
+if(!file_exists("templates/".$template."/index.tpl")) {
+	exit("Template could not be loaded. Err code: 135604042010");
 }
 
 /*
@@ -142,7 +142,7 @@ require_once(APPPATH.'config/database.php');
 /* Some basic actions */
 if(empty($_SESSION['logged'])) $_SESSION['logged'] = 0;
 $smarty = new Smarty;
-$smarty->template_dir = "templates/$template";
+$smarty->template_dir = "templates/".$template;
 $smarty->config_dir = ' configs';
 $smarty->cache_dir = 'cache';
 $smarty->compile_dir = 'compile';
