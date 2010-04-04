@@ -21,12 +21,15 @@ class IDE{
 	public function loadInjections($name) {
 		if(is_dir("injections/$name")) {
 			$folders = $this->dir_list("injections/$name");
+			if(count($folders) != 0) {
 				foreach($folders as $injection) {
 					if(!file_exists("injections/$name/$injection/injection.php"))
 						continue;
 					else
 						include("injections/$name/$injection/injection.php");
 				}
+			}
+				else return false;
 			}
 		else
 			throw new exception("Could not load injections! Event Folder not found. ErrCode: 172610032010");
