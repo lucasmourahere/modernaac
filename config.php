@@ -31,6 +31,8 @@ $config['premDays'] = 30;
 $startPos['x'] = 1000;
 $startPos['y'] = 1000;
 $startPos['z'] = 7;
+/* These are config to the engine, usually the default ones works well so no change needed for unexperienced users. */
+$config['engine']['PHPversion'] = "5.0.0";
 
 #DON'T TOUCH!
 @DEFINE('LEVELTOCREATEGUILD', $config['levelToCreateGuild']);
