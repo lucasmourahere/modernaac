@@ -136,6 +136,9 @@ require_once(APPPATH.'/libraries/Smarty.class.php');
 require_once(APPPATH.'/libraries/system.php');
 require(APPPATH."libraries/POT/OTS.php");
 require_once BASEPATH.'codeigniter/CodeIgniter'.EXT;
+
+/* Check the server's compatybility with the engine. */
+if(!is_php($config['engine']['PHPversion'])) show_error("Your server runs verion of PHP older than ".$config['engine']['PHPversion'].". Please update in order to use this system. Err code: 140704042010");
 $contents = ob_get_contents();
 ob_end_clean();
 require_once(APPPATH.'config/database.php');
