@@ -4,7 +4,7 @@ $ide = new IDE;
 try {$ide->loadInjections("highscores");} catch(Exception $e) {error($e->getMessage()); }
 echo form_open('highscores');
 
-	if(count($config['worlds'] > 0)) {
+	if(count($config['worlds']) > 1) {
 		echo "<b>World</b>&nbsp;&nbsp;";
 		echo "<select name='world'>";
 		foreach($config['worlds'] as $id=>$name) {
