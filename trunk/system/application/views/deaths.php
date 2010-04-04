@@ -11,7 +11,14 @@ echo form_open('latest_deaths');
 		}
 		echo "</select>";
 	}
-
-	echo "<br />Latest deaths<br />";
-
+	echo "<table width=100%><tr><h1>Latest deaths on ".$config['server_name']."</h1></tr><tr>";
+	echo "<td width=30%>Date</td>";
+	echo "<td width=70%>Info:</td>";
+	echo "</tr>";
+	foreach ($deaths as $print)
+	{
+				echo "<tr><td>".date("j.m.Y, G:i:s",$print['date'])."</td>";
+				echo $print['players_rows']."</tr>";
+	}
+	echo "</table>"; 
 ?>
