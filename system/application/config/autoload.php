@@ -1,4 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+require("config.php");
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -39,7 +40,7 @@
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array();
+$autoload['libraries'] = $config['engine']['autoload_libraries'];
 
 
 /*
@@ -51,7 +52,7 @@ $autoload['libraries'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array();
+$autoload['helper'] = $config['engine']['autoload_helper'];
 
 
 /*
@@ -63,7 +64,7 @@ $autoload['helper'] = array();
 |	$autoload['plugin'] = array('captcha', 'js_calendar');
 */
 
-$autoload['plugin'] = array();
+$autoload['plugin'] = $config['engine']['autoload_helper'];
 
 
 /*
@@ -79,7 +80,7 @@ $autoload['plugin'] = array();
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = $config['engine']['autoload_config'];
 
 
 /*
@@ -108,7 +109,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array();
+$autoload['model'] = $config['engine']['autoload_model'];
 
 
 

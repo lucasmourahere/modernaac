@@ -1,4 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+require("config.php");
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -40,8 +41,8 @@
 |
 */
 
-$route['default_controller'] = "home";
-$route['scaffolding_trigger'] = "";
+$route['default_controller'] = $config['engine']['default_controller'];
+$route['scaffolding_trigger'] = $config['scaffolding_trigger'];
 
 
 /* End of file routes.php */
