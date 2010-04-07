@@ -1,16 +1,16 @@
-<?php /* Smarty version Smarty3-b7, created on 2010-03-05 19:23:09
+<?php /* Smarty version Smarty3-b7, created on 2010-04-06 22:22:52
          compiled from "templates/default\index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:104874b915a1d11a1d5-28651053%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:178634bbba62c4b16f5-79796987%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b9be817a5a300ba6ffac35944909d95e98be7a8e' => 
     array (
       0 => 'templates/default\\index.tpl',
-      1 => 1267816987,
+      1 => 1270588971,
     ),
   ),
-  'nocache_hash' => '104874b915a1d11a1d5-28651053',
+  'nocache_hash' => '178634bbba62c4b16f5-79796987',
   'function' => 
   array (
   ),
@@ -45,8 +45,8 @@ $_smarty_tpl->decodeProperties(array (
 		<!--header -->
 		<div id="header">			
 				
-			<h1 id="logo-text">re<span class="gray">fresh</span></h1>		
-			<h2 id="slogan">put your site slogan here...</h2>
+			<h1 id="logo-text">Mo<span class="gray">dernAAC</span></h1>		
+			<h2 id="slogan">Powered by IDE Engine</h2>
 				
 			<form class="search" method="post" action="#">
 				<p>
@@ -76,8 +76,10 @@ $_smarty_tpl->decodeProperties(array (
 /index.php/character/view">Characters</a></li>
 				<li><a href="<?php echo $_smarty_tpl->getVariable('path')->value;?>
 /index.php/character/online">Who is Online</a></li>
-				<li><a href="guilds">Guilds</a></li>
-				<li><a href="index.html">About</a></li>		
+				<li><a href="<?php echo $_smarty_tpl->getVariable('path')->value;?>
+/index.php/guilds">Guilds</a></li>
+				<li><a href="<?php echo $_smarty_tpl->getVariable('path')->value;?>
+/index.php/highscores">Highscores</a></li>		
 			</ul>
 		</div>					
 			
@@ -101,33 +103,9 @@ $_smarty_tpl->decodeProperties(array (
 					</ul>	
 				</div>
 			
-				<h1>Site Partners</h1>
-				<div class="left-box">
-					<ul class="sidemenu">
-   					<li><a href="http://www.dreamhost.com/r.cgi?287326">Dreamhost</a></li>
-						<li><a href="http://www.4templates.com/?aff=ealigam">4templates</a></li>
-						<li><a href="http://store.templatemonster.com/?aff=ealigam">TemplateMonster</a></li>	
-						<li><a href="http://www.fotolia.com/partner/114283">Fotolia.com</a></li>									
-						<li><a href="http://www.text-link-ads.com/?ref=40025">Text Link Ads</a></li>
-  					</ul>	
-				</div>
 				
-				<h1>Wise Words</h1>
-				<div class="left-box">
-					<p>&quot;To be concious that you are ignorant of the
-					facts is a great step to knowledge&quot; </p>
-					
-					<p class="align-right">- Benjamin Disraeli</p>
-				</div>	
 				
-				<h1>Support Styleshout</h1>
-				<div class="left-box">
-					<p>If you are interested in supporting my work and would like to contribute, you are
-					welcome to make a small donation through the 
-					<a href="http://www.styleshout.com/">donate link</a> on my website - it will 
-					be a great help and will surely be appreciated.</p>
-				</div>
-							
+				
 				
 			</div>
 				
@@ -141,19 +119,6 @@ $_smarty_tpl->decodeProperties(array (
 					
 		<!--footer starts here-->
 		<div id="footer">
-			
-			<p>
-			&copy; 2006 <strong>Your Company</strong> | 
-			Design by: <a href="http://www.styleshout.com/">styleshout</a> | 
-			Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> | 
-			<a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
-			
-   		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			
-			<a href="index.html">Home</a>&nbsp;|&nbsp;
-   		<a href="index.html">Sitemap</a>&nbsp;|&nbsp;
-	   	<a href="index.html">RSS Feed</a>
-   		</p>
 				Page rendered in: <?php echo $_smarty_tpl->getVariable('renderTime')->value;?>
 
 		</div>	

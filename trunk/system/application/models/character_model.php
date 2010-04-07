@@ -9,6 +9,7 @@ class Character_model extends Model {
 	
 	public function getPlayersOnline() {
 		$this->load->database();
+		$this->db->cache_on();
 		@$world = (int)$_REQUEST['world'];
 		@$order = $_REQUEST['sort'];
 		if(!empty($world))

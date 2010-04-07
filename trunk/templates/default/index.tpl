@@ -24,8 +24,8 @@
 		<!--header -->
 		<div id="header">			
 				
-			<h1 id="logo-text">re<span class="gray">fresh</span></h1>		
-			<h2 id="slogan">put your site slogan here...</h2>
+			<h1 id="logo-text">Mo<span class="gray">dernAAC</span></h1>		
+			<h2 id="slogan">Powered by IDE Engine</h2>
 				
 			<form class="search" method="post" action="#">
 				<p>
@@ -73,33 +73,9 @@
 					</ul>	
 				</div>
 			
-				<h1>Site Partners</h1>
-				<div class="left-box">
-					<ul class="sidemenu">
-   					<li><a href="http://www.dreamhost.com/r.cgi?287326">Dreamhost</a></li>
-						<li><a href="http://www.4templates.com/?aff=ealigam">4templates</a></li>
-						<li><a href="http://store.templatemonster.com/?aff=ealigam">TemplateMonster</a></li>	
-						<li><a href="http://www.fotolia.com/partner/114283">Fotolia.com</a></li>									
-						<li><a href="http://www.text-link-ads.com/?ref=40025">Text Link Ads</a></li>
-  					</ul>	
-				</div>
 				
-				<h1>Wise Words</h1>
-				<div class="left-box">
-					<p>&quot;To be concious that you are ignorant of the
-					facts is a great step to knowledge&quot; </p>
-					
-					<p class="align-right">- Benjamin Disraeli</p>
-				</div>	
 				
-				<h1>Support Styleshout</h1>
-				<div class="left-box">
-					<p>If you are interested in supporting my work and would like to contribute, you are
-					welcome to make a small donation through the 
-					<a href="http://www.styleshout.com/">donate link</a> on my website - it will 
-					be a great help and will surely be appreciated.</p>
-				</div>
-							
+				
 				
 			</div>
 				
@@ -112,19 +88,6 @@
 					
 		<!--footer starts here-->
 		<div id="footer">
-			
-			<p>
-			&copy; 2006 <strong>Your Company</strong> | 
-			Design by: <a href="http://www.styleshout.com/">styleshout</a> | 
-			Valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> | 
-			<a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
-			
-   		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			
-			<a href="index.html">Home</a>&nbsp;|&nbsp;
-   		<a href="index.html">Sitemap</a>&nbsp;|&nbsp;
-	   	<a href="index.html">RSS Feed</a>
-   		</p>
 				Page rendered in: {$renderTime}
 		</div>	
 

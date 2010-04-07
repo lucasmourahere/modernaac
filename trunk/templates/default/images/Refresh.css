@@ -335,3 +335,40 @@ margin-top: 5px;
 margin-left: 10px;
 font-size: 12px;
 }
+
+.toolbar {
+	padding: 10px;
+	border: 1px solid silver;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.highlight:hover {
+	background-color: lightyellow;
+	padding: 3px;
+}
+
+.newsTitle {
+	padding: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	border-bottom: 1px solid silver;
+}
+
+.newsBody {
+	padding: 5px;
+}
+
+.newsFooter {
+	padding: 5px;
+	font-size: 10px;
+}
+
+.news {
+	margin-bottom: 15px;
+}
+
+.readArchive {
+	text-align: center;
+	font-weight: bold;
+}
