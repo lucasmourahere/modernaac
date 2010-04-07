@@ -137,6 +137,7 @@ require_once(APPPATH.'/libraries/system.php');
 require(APPPATH."libraries/POT/OTS.php");
 require_once BASEPATH.'codeigniter/CodeIgniter'.EXT;
 
+if(!DEFINED("SYSTEM_STOP")) {
 /* Check the server's compatybility with the engine. */
 if(!is_php($config['engine']['PHPversion'])) show_error("Your server runs verion of PHP older than ".$config['engine']['PHPversion'].". Please update in order to use this system. Err code: 140704042010");
 $contents = ob_get_contents();
@@ -150,7 +151,7 @@ $smarty->config_dir = ' configs';
 $smarty->cache_dir = 'cache';
 $smarty->compile_dir = 'compile';
 @$logged = ($_SESSION['logged'] == 1) ? 1 : 0;
-$head = '<link type="text/css" href="'.$website.'/public/css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" /><script type="text/javascript" src="'.$website.'/public/js/jquery-1.3.2.min.js"></script><script type="text/javascript" src="'.$website.'public/js/jquery-ui-1.7.2.custom.min.js"></script>';
+$head = '<link type="text/css" href="'.$website.'/public/css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" /><script type="text/javascript" src="'.$website.'/public/js/jquery-1.3.2.min.js"></script><script type="text/javascript" src="'.$website.'/public/js/jquery-ui-1.7.2.custom.min.js"></script>';
 $smarty->assign('head', $head);
 $smarty->assign('path', $website);
 $smarty->assign('template_path', $website.'/templates/'.$config['layout']);
@@ -162,7 +163,8 @@ $time = $time[1] + $time[0];
 $finish = $time; 
 $totaltime = round(($finish - $start), 4); 
 $smarty->assign('renderTime', $totaltime);
-$smarty->assign('title', $title);
+$smarty->assign('title', $config['title']);
 $smarty->display('index.tpl');
+}
 /* End of file index.php */
 /* Location: ./index.php */

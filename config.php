@@ -55,6 +55,8 @@ $config['levelToCreateGuild'] = 50;
 /*Limit of latest deaths*/
 $config['latestdeathlimit'] = 20;
 
+/*Limit news per page*/
+$config['newsLimit'] = 10;
 
 /*Database information*/
 $config['database']['host'] = "localhost";
@@ -102,7 +104,7 @@ $config['engine']['charSET'] = "UTF-8";
 $config['engine']['enable_hooks'] = FALSE;
 $config['engine']['permitted_uri_chars'] = "a-z 0-9~%.:_\-";
 $config['engine']['enable_query_strings'] = FALSE;
-$config['engine']['global_xss_filtering'] = FALSE;
+$config['engine']['global_xss_filtering'] = TRUE;
 $config['engine']['compress_output'] = FALSE;
 $config['engine']['proxy_ip'] = "";
 $config['engine']['autoload_libraries'] = array();
