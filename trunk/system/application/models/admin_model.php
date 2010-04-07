@@ -47,6 +47,11 @@ class Admin_model extends Model {
 		$this->db->query("DELETE FROM `news` WHERE `id` = '".$id."'");
 	}
 	
+	public function deleteComments($id) {
+		$this->load->database();
+		$this->db->query("DELETE FROM `comments` WHERE `news_id` = '".$id."'");
+	}
+	
 }
 
 ?>

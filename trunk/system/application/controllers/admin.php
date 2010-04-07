@@ -107,6 +107,7 @@ class Admin extends Controller {
 		$ide->requireAdmin();
 		$this->load->model("admin_model");
 		$news = $this->admin_model->getNews($id);
+		$this->admin_model->deleteComments($id);
 			if($news == false)
 				$ide->redirect(WEBSITE."/index.php/admin/news");
 			else {
