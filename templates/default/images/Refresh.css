@@ -18,6 +18,7 @@ body {
 	font: 70%/1.5em Verdana, Tahoma, arial, sans-serif;
 	color: #333; 
 	text-align: center;
+
 }
 
 /* links */
@@ -360,7 +361,7 @@ font-size: 12px;
 }
 
 .newsFooter {
-	padding: 5px;
+	padding-left: 5px;
 	font-size: 10px;
 }
 
@@ -371,4 +372,26 @@ font-size: 12px;
 .readArchive {
 	text-align: center;
 	font-weight: bold;
+}
+
+.viewComments {
+	padding-left: 5px;
+	font-family: tahoma;
+}
+
+.comment {
+	margin-bottom: 10px;
+	border: 1px solid silver;
+	padding: 5px;
+}
+
+.commentBody {
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	border-bottom: 1px dotted silver;
+}
+
+.commentFooter {
+	font-family: tahoma;
+	font-size: 12px;
 }

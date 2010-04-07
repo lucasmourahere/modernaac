@@ -30,6 +30,7 @@ class Admin extends Controller {
 	}
 	
 	public function news() {
+		require("config.php");
 		$ide = new IDE;
 		$ide->requireAdmin();
 		$data = array();
@@ -38,7 +39,7 @@ class Admin extends Controller {
 		$this->load->library('pagination');
 		$config['base_url'] = WEBSITE.'/index.php/admin/news/';
 		$config['total_rows'] = $this->admin_model->getNewsAmount();
-		$config['per_page'] = '10'; 
+		$config['per_page'] = $config['newsLimit'];
 		$this->pagination->initialize($config); 
 		$data['pages'] = $this->pagination->create_links();
 		$this->load->view("admin_menu");
