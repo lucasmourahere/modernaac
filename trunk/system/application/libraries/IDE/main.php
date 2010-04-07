@@ -21,6 +21,10 @@ class IDE{
 			return @$l; 
 	} 
 	
+	public function isAdmin() {
+		if($_SESSION['admin'] != 1) return false; else return true;
+	}
+	
 	public function loadInjections($name) {
 		if(is_dir("injections/$name")) {
 			$folders = $this->dir_list("injections/$name");
@@ -35,7 +39,7 @@ class IDE{
 				else return false;
 			}
 		else
-			throw new exception("Could not load injections! Event Folder not found. ErrCode: 172610032010");
+			throw new exception("Could not load injections! Injection Folder not found. (".$name.") ErrCode: 172610032010");
 	}
 	
 	public function requireAdmin() {

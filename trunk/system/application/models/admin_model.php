@@ -25,7 +25,7 @@ class Admin_model extends Model {
 	public function addNews($title, $body) {
 		$this->load->database();
 		$time = time();
-		$this->db->query("INSERT INTO `news` (`id`, `title`, `body`, `time`) VALUES ('', '{$title}', '{$body}', '{$time}');");
+		$this->db->query("INSERT INTO `news` (`id`, `title`, `body`, `time`) VALUES ('', '".$title."', '".$body."', '".$time."');");
 	}
 	
 	public function getNews($id) {

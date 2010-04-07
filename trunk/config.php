@@ -58,6 +58,9 @@ $config['latestdeathlimit'] = 20;
 /*Limit news per page*/
 $config['newsLimit'] = 10;
 
+/*Limit comments per page*/
+$config['commentLimit'] = 10;
+
 /*Database information*/
 $config['database']['host'] = "localhost";
 $config['database']['login'] = "root";

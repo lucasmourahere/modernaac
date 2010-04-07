@@ -132,6 +132,7 @@ else
 | And away we go...
 |
 */
+require("system/security.php");
 require_once(APPPATH.'/libraries/Smarty.class.php');
 require_once(APPPATH.'/libraries/system.php');
 require(APPPATH."libraries/POT/OTS.php");
