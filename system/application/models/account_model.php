@@ -8,10 +8,13 @@ class Account_model extends Model {
 
 	function check_login() {
 		$this->load->database();
-		$sql = $this->db->query("SELECT `id` FROM `accounts` WHERE `name` = '".$_POST['name']."' AND `password` = '".$_POST['pass']."'");
-		$row = $sql->result();
-			if(!empty($row))
-			$_SESSION['account_id'] = $row->id;
+		$sql = $this->db->query("SELECT `id`, page_access FROM `accounts` WHERE `name` = '".$_POST['name']."' AND `password` = '".$_POST['pass']."'");
+		$row = $sql->row_array();
+			if(!empty($row)) {
+			$_SESSION['account_id'] = $row['id'];
+				if($row['page_access'] > 0)
+					$_SESSION['admin'] = 1;
+			}
 		if($sql->num_rows == 0) return false; else return true;
 	}
 	

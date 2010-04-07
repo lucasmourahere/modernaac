@@ -2,14 +2,12 @@
 
 class Home extends Controller {
 
-	function Welcome()
-	{
-		parent::Controller();	
-	}
-	
-	function index()
-	{
-		$this->load->view('home');
+	public function index() {
+		require("config.php");
+		$this->load->model("home_model");
+		$data = array();
+		$data['news'] = $this->home_model->getAllNews();
+		$this->load->view("home", $data);
 	}
 }
 

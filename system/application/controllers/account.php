@@ -111,6 +111,7 @@ If you do NOT understand the code, do NOT change anything in here.
 			$_SESSION['logged'] = '';
 			$_SESSION['account_id'];
 			$_SESSION['name'] = '';
+			$_SESSION['admin'] = 0;
 			$ide->redirect('login/1');
 		}
 		

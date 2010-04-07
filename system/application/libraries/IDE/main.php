@@ -4,8 +4,11 @@ class IDE{
 		requireLogin();
 	}
 	
-	public function redirect($link) {
+	public function redirect($link, $time = null) {
+		if(empty($time))
 		header('Location: '.$link.'');
+		else 
+		echo '<meta http-equiv="refresh" content="'.$time.';url='.$link.'" />';
 	}
 	
 	public function isLogged() {
@@ -33,6 +36,17 @@ class IDE{
 			}
 		else
 			throw new exception("Could not load injections! Event Folder not found. ErrCode: 172610032010");
+	}
+	
+	public function requireAdmin() {
+		if($_SESSION['admin'] != 1)
+			$this->redirect(WEBSITE."/index.php/account/login");
+		else
+			return true;
+	}
+	
+	public function system_stop() {
+		DEFINE("SYSTEM_STOP", 1);
 	}
 	
 }
