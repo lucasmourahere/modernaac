@@ -5,6 +5,7 @@ class Admin extends Controller {
 	public function index() {
 		$ide = new IDE;
 		$ide->requireAdmin();
+		$this->load->view("admin_menu");
 		$this->load->view("admin");
 	}
 	
