@@ -50,7 +50,8 @@
 				<li><a href="{$path}/index.php/character/view">Characters</a></li>
 				<li><a href="{$path}/index.php/character/online">Who is Online</a></li>
 				<li><a href="{$path}/index.php/guilds">Guilds</a></li>
-				<li><a href="{$path}/index.php/highscores">Highscores</a></li>		
+				<li><a href="{$path}/index.php/highscores">Highscores</a></li>	
+				<li><a href="{$path}/index.php/forum">Forum</a></li>		
 			</ul>
 		</div>					
 			

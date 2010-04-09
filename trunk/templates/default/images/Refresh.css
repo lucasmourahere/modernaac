@@ -21,6 +21,10 @@ body {
 
 }
 
+a img{
+	border: none;
+}
+
 /* links */
 a, a:visited {
 	text-decoration: none;
@@ -97,11 +101,6 @@ blockquote {
 }
 
 /* form elements */
-form {
-	margin:10px; padding: 0 5px;
-	border: 1px solid #f2f2f2; 
-	background-color: #FAFAFA; 
-}
 label{
 float: left;
 width: 120px;
@@ -257,7 +256,7 @@ form.search input.button {
 	background-color: #FAFAFA;
 	padding: 5px; margin: 20px 10px 0 10px;
 	border: 1px solid #f2f2f2;
-	font-size: 95%;	
+	font-size: 95%;
 }
 .post-footer .date {
 	background: url(clock.gif) no-repeat left center;
@@ -317,6 +316,7 @@ form.search input.button {
 	height: 55px;
 	text-align: center;	
 	font-size: 92%;
+	padding-top: 15px;
 }
 #footer a { text-decoration: none; }
 
@@ -394,4 +394,147 @@ font-size: 12px;
 .commentFooter {
 	font-family: tahoma;
 	font-size: 12px;
+}
+
+.leftBoard {
+	float: left;
+	width: 64%;
+}
+
+.rightBoard {
+	float: left;
+}
+
+.forumBoard {
+	padding: 3px;
+	margin-bottom: 5px;
+	border-top: 1px dotted silver;
+}
+
+.boardTitle {
+	font-weight: bold;
+	font-size: 13px;
+	font-family: tahoma;
+}
+
+.boardDescription {
+	padding: 4px;
+	float: left;
+}
+
+.boardStatus {
+	float: left;
+	width: 50px;
+}
+
+.boardInformation {
+	padding: 5px;
+	border: 1px dashed silver;
+	margin-bottom: 15px;
+}
+
+.boardInformationTitle {
+	font-weight: bold;
+	font-size: 13px;
+	font-family: tahoma;
+}
+
+.boardInformationDescription {
+	padding: 4px;
+}
+
+.boardInformationModerators {
+	font-family: arial;
+	font-size: 11px;
+}
+
+.threadTable {
+	margin-bottom: 10px;
+	padding: 3px;
+}
+
+.threadStatus {
+	float: left;
+	width: 30px;
+}
+
+.threadLeft {
+	float: left;
+	width: 70%;
+}
+
+.threadTitle {
+	font-weight: bold;
+}
+
+.boardPages {
+	text-align: center;
+}
+
+.threadTable {
+	padding: 3px;
+	border-top: 1px dotted silver;
+	padding-top: 5px;
+	margin-top: 20px;
+}
+
+.forumPost {
+	padding: 5px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid silver;
+}
+
+.forumPostDate {
+	font-family: tahoma;
+	padding: 2px;
+}
+
+.forumPostLeft {
+padding: 5px;
+valign: top;
+border-right: 1px solid silver;
+}
+
+.forumPostAuthor {
+	font-weigh: bold;
+}
+
+.forumPostRight {
+	valign: top;
+	padding-left: 10px;
+}
+
+.forumHistory {
+	font-weight: bold;
+	padding: 3px;
+}
+
+.forumPostText {
+	border-bottom: 1px dotted silver;
+}
+
+.postToolBar form {
+	background: none;
+	text-align: right;
+	padding-top: 5px;
+	bordr: none;
+	margin: 0px;
+}
+
+quote {
+	padding: 4px;
+	border: 1px solid silver;
+}
+
+.moderatingPanel {
+	border: 1px solid silver;
+	padding: 5px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.postTitle {
+	font-weight: bold;
+	margin-left: 16%;
+	border-bottom: 1px dotted silver;
 }

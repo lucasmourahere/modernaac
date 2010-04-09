@@ -30,13 +30,15 @@ try { $ide->loadInjections("view_news"); }catch(Exception $e) { error($e->getMes
 	foreach($comments as $comment) {
 		if($ide->isAdmin())
 			$delete = "<a href='#' onClick=\"if(confirm('Are you sure you want to delete this comment?')) window.location.href='".WEBSITE."/index.php/home/delete_comment/".$comment['id']."';\" ><img src='".WEBSITE."/public/images/false.gif'></a>";
-		else {
+		else if($ide->isLogged()) {
 			if(in_array($comment['author'], $characters[0])) {
 				$delete = "<a href='#' onClick=\"if(confirm('Are you sure you want to delete this comment?')) window.location.href='".WEBSITE."/index.php/home/delete_comment/".$comment['id']."';\" ><img src='".WEBSITE."/public/images/false.gif'></a>";
 			}
 			else
 				$delete = "";
 		}
+		else
+			$delete = "";
 		echo "<div class='comment'>";
 		echo "<div class='commentBody'>".$comment['body']."</div>";
 		echo "<div class='commentFooter'>".$delete." Posted on: ".UNIX_TimeStamp($comment['time'])." by <a href='".WEBSITE."/index.php/character/view/".$comment['author']."'>".$comment['author']."</a></div>";

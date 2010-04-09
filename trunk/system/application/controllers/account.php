@@ -98,7 +98,14 @@ If you do NOT understand the code, do NOT change anything in here.
 				if($this->form_validation->run() == true) {
 					$_SESSION['logged'] = 1;
 					$_SESSION['name'] = $_POST['name'];
+					if(!empty($_SESSION['forward'])) {
+						$forward = $_SESSION['forward'];
+						$_SESSION['forward'] = "";
+						$ide->redirect($forward);
+					}
+					else 
 					$ide->redirect('../account');
+					
 				}
 			}
 			/* Load view of login page. */

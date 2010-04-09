@@ -1,16 +1,16 @@
-<?php /* Smarty version Smarty3-b7, created on 2010-04-06 22:22:52
+<?php /* Smarty version Smarty3-b7, created on 2010-04-08 19:55:17
          compiled from "templates/default\index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:178634bbba62c4b16f5-79796987%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:317184bbe2695371c14-32659073%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b9be817a5a300ba6ffac35944909d95e98be7a8e' => 
     array (
       0 => 'templates/default\\index.tpl',
-      1 => 1270588971,
+      1 => 1270752904,
     ),
   ),
-  'nocache_hash' => '178634bbba62c4b16f5-79796987',
+  'nocache_hash' => '317184bbe2695371c14-32659073',
   'function' => 
   array (
   ),
@@ -79,7 +79,9 @@ $_smarty_tpl->decodeProperties(array (
 				<li><a href="<?php echo $_smarty_tpl->getVariable('path')->value;?>
 /index.php/guilds">Guilds</a></li>
 				<li><a href="<?php echo $_smarty_tpl->getVariable('path')->value;?>
-/index.php/highscores">Highscores</a></li>		
+/index.php/highscores">Highscores</a></li>	
+				<li><a href="<?php echo $_smarty_tpl->getVariable('path')->value;?>
+/index.php/forum">Forum</a></li>		
 			</ul>
 		</div>					
 			
