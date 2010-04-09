@@ -12,7 +12,7 @@ class IDE{
 	}
 	
 	public function isLogged() {
-		if($_SESSION['logged'] == 1) return true; else return false;
+		if(@$_SESSION['logged'] == 1) return true; else return false;
 	}
 	
 	public function dir_list($d){ 
@@ -22,7 +22,7 @@ class IDE{
 	} 
 	
 	public function isAdmin() {
-		if($_SESSION['admin'] != 1) return false; else return true;
+		if(@$_SESSION['admin'] != 1) return false; else return true;
 	}
 	
 	public function loadInjections($name) {

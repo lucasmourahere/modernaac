@@ -116,6 +116,77 @@ class Admin extends Controller {
 				$ide->redirect(WEBSITE."/index.php/admin/news", 2);
 			}
 	}
+	
+	public function forum() {
+		$ide = new IDE;
+		$ide->requireAdmin();
+		$data = array();
+		$this->load->model("forum_model");
+		$data['boards'] = $this->forum_model->getBoardsName();
+		$this->load->view("admin_menu");
+		$this->load->view("admin_forums", $data);
+	}
+	
+	public function create_board() {
+		$ide = new IDE;
+		$ide->requireAdmin();
+		$data = array();
+		$this->load->helper("form_helper");
+		$this->load->library("form_validation");
+			if($_POST) {
+			$this->form_validation->set_rules('name', 'Name', 'required|min_length[2]|max_length[64]');
+			$this->form_validation->set_rules('description', 'Description', 'max_lenght[300]');
+			$this->form_validation->set_rules('access', 'Access', 'required|integer');
+			$this->form_validation->set_rules('closed', 'Closed', 'required|integer');
+			$this->form_validation->set_rules('order', 'Order', 'required|integer');
+			$this->form_validation->set_rules('login', 'Login required', 'required|integer');
+				if($this->form_validation->run() == true) {
+					$this->load->model("forum_model");
+					$this->forum_model->createBoard($_POST['name'], $_POST['description'], $_POST['access'], $_POST['closed'], $_POST['order'], $_POST['login'], $_POST['moderators']);
+					success("Board has been created.");
+					$ide->redirect(WEBSITE."/index.php/admin/forum", 2);
+				}
+			}
+		$this->load->view("admin_menu");
+		$this->load->view("admin_new_board");
+	}
+	
+	public function edit_board($id) {
+		$ide = new IDE;
+		$ide->requireAdmin();
+		$this->load->model("forum_model");
+		$data = array();
+		$data['board'] = $this->forum_model->fetchBoard($id);
+		if(count($data['board']) == 0) $ide->redirect(WEBSITE."/index.php/admin/forum");
+		$this->load->helper("form_helper");
+		$this->load->library("form_validation");
+		if($_POST) {
+			$this->form_validation->set_rules('name', 'Name', 'required|min_length[2]|max_length[64]');
+			$this->form_validation->set_rules('description', 'Description', 'max_lenght[300]');
+			$this->form_validation->set_rules('access', 'Access', 'required|integer');
+			$this->form_validation->set_rules('closed', 'Closed', 'required|integer');
+			$this->form_validation->set_rules('order', 'Order', 'required|integer');
+			$this->form_validation->set_rules('login', 'Login required', 'required|integer');
+				if($this->form_validation->run() == true) {
+					$this->load->model("forum_model");
+					$this->forum_model->editBoard($id, $_POST['name'], $_POST['description'], $_POST['access'], $_POST['closed'], $_POST['order'], $_POST['login'], $_POST['moderators']);
+					success("Board has been edited.");
+					$ide->redirect(WEBSITE."/index.php/admin/forum", 2);
+				}
+			}
+		$this->load->view("admin_menu");
+		$this->load->view("admin_edit_board", $data);
+	}
+	
+	public function delete_Board($id) {
+		$ide = new IDE;
+		$ide->requireAdmin();
+		$this->load->model("forum_model");
+		$thread = $this->forum_model->getBoardInfo($id);
+		if(count($thread) == 0) $ide->redirect(WEBSITE."/index.php/admin/forum");
+		$this->forum_model->deleteBoard($id);
+		$ide->redirect(WEBSITE."/index.php/admin/forum");
+	}
 }
 
 ?>

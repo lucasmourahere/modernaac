@@ -53,7 +53,7 @@ class home_model extends Model {
 	
 	public function getCharacters() {
 		$this->load->database();
-		return $this->db->query("SELECT `name` FROM `players` WHERE `account_id` = '".$_SESSION['account_id']."'")->result_array();
+		return @$this->db->query("SELECT `name` FROM `players` WHERE `account_id` = '".$_SESSION['account_id']."'")->result_array();
 	}
 	
 	public function playerExistsOnAccount($name) {

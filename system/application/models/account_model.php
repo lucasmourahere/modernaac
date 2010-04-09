@@ -7,12 +7,14 @@ class Account_model extends Model {
 	}
 
 	function check_login() {
+		require("config.php");
 		$this->load->database();
 		$sql = $this->db->query("SELECT `id`, page_access FROM `accounts` WHERE `name` = '".$_POST['name']."' AND `password` = '".$_POST['pass']."'");
 		$row = $sql->row_array();
 			if(!empty($row)) {
 			$_SESSION['account_id'] = $row['id'];
-				if($row['page_access'] > 0)
+			$_SESSION['access'] = $row['page_access'];
+				if($row['page_access'] >= $config['adminAccess'])
 					$_SESSION['admin'] = 1;
 			}
 		if($sql->num_rows == 0) return false; else return true;

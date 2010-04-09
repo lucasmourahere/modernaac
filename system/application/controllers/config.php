@@ -97,13 +97,7 @@ $config['scaffolding_trigger'] = "password";
 $config['adminAccess'] = 5;
 
 /*Max threads per page*/
-$config['threadsLimit'] = 10;
-
-/*Max posts per page in a thread*/
-$config['postsLimit'] = 10;
-
-/*Time between posts*/
-$config['timeBetweenPosts'] = 30;
+$config['threadsLimit'] = 2;
 
 
 /*
