@@ -73,7 +73,13 @@
 	$character->find( $name );
 	// Return false in case a player was not found.
 	if ( !$character->isLoaded( ) )
-		return BASEPATH_SIGNATURE.'images/false-character.png';
+	{
+		// Send the headers.
+		header( 'Content-type: image/png' );
+		// Include the cache file.
+		include( BASEPATH_SIGNATURE.'images/false-character.png' );
+		exit;
+	}
 		
 	
 	
@@ -98,7 +104,8 @@
 			// Send the headers.
 			header( 'Content-type: image/png' );
 			// Include the cache file.
-			return include( BASEPATH_SIGNATURE.'cache/'.$cacheImage );
+			include( BASEPATH_SIGNATURE.'cache/'.$cacheImage );
+			exit;
 		}
 		else
 		{
@@ -201,5 +208,5 @@
 	// Send the headers.
 	header( 'Content-type: image/png' );
 	// Include the cache file.
-	return include( BASEPATH_SIGNATURE.'cache/'.$character->getId( ).'_'.$time.'.png' );
-	
+	include( BASEPATH_SIGNATURE.'cache/'.$character->getId( ).'_'.$time.'.png' );
+	exit;
