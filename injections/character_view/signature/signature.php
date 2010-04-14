@@ -6,7 +6,15 @@
 	 * @author Christopher `Chris/Absolute Mango` Eklund
 	 * @version 1.0.0
 	 *
-	 **/
+  	 **/
+	
+	
+	// Create an empty config array.
+	$config = array( );
+	// Set the cache life time.
+	$config['cache']['signatures'] = 60 * 30;
+	
+	
 	
 	// Create a constant holding the base path.
 	define( 'BASEPATH', '../../../' );
