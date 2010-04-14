@@ -6,7 +6,6 @@ $time = explode(" ", $time);
 $time = $time[1] + $time[0]; 
 $start = $time; 
 require("config.php");
-
 /*
 |---------------------------------------------------------------
 | PHP ERROR REPORTING LEVEL
@@ -94,7 +93,6 @@ else
 if(!file_exists("templates/".$template."/index.tpl")) {
 	exit("Template could not be loaded. Err code: 135604042010");
 }
-
 /*
 |---------------------------------------------------------------
 | DEFINE APPLICATION CONSTANTS
@@ -137,6 +135,8 @@ require_once(APPPATH.'/libraries/Smarty.class.php');
 require_once(APPPATH.'/libraries/system.php');
 require(APPPATH."libraries/POT/OTS.php");
 require_once BASEPATH.'codeigniter/CodeIgniter'.EXT;
+
+
 
 if(!DEFINED("SYSTEM_STOP")) {
 /* Check the server's compatybility with the engine. */

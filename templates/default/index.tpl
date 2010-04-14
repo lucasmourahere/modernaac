@@ -52,6 +52,7 @@
 				<li><a href="{$path}/index.php/guilds">Guilds</a></li>
 				<li><a href="{$path}/index.php/highscores">Highscores</a></li>	
 				<li><a href="{$path}/index.php/forum">Forum</a></li>		
+				<li><a href="{$path}/index.php/bugtracker">Bug Tracker</a></li>	
 			</ul>
 		</div>					
 			
