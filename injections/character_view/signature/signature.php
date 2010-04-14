@@ -201,19 +201,3 @@
 	// Include the cache file.
 	return include( BASEPATH_SIGNATURE.'cache/'.$character->getId( ).'_'.$time.'.png' );
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
