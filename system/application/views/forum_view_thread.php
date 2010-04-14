@@ -8,13 +8,15 @@ echo "<div class='boardPages'>".$pages."</div>";
 		if(!$ide->isLogged())
 			alert("You need to be logged in to access options.");
 
-if($isModerator or $ide->isAdmin()) {
-	echo "<fieldset class='moderatingPanel'>";
-		echo "<legend>Moderating panel</legend>";
-		echo "<a href='#' onClick=\"if(confirm('Are you sure you want to delete this thread?')) window.location.href='".WEBSITE."/index.php/forum/delete_thread/".$id."';\">Delete thread</a>";
-	echo "</fieldset>";
+if($ide->isLogged()) {
+	if($isModerator or $ide->isAdmin()) {
+		echo "<fieldset class='moderatingPanel'>";
+			echo "<legend>Moderating panel</legend>";
+			echo "<a href='#' onClick=\"if(confirm('Are you sure you want to delete this thread?')) window.location.href='".WEBSITE."/index.php/forum/delete_thread/".$id."';\">Delete thread</a>";
+		echo "</fieldset>";
+	}
 }
-			
+				
 if($board[0]['closed'] == 1 or $thread[0]['closed'] == 1) 
 		echo "<a href='".WEBSITE."/index.php/forum/reply/".$thread[0]['id']."'><img style='margin-bottom: -10px;' src='".WEBSITE."/public/images/forum/closedReply.png'></a>";
 	else
@@ -34,10 +36,12 @@ foreach($posts as $post) {
 		echo "</table>";
 		echo "<div class='postToolBar'>";
 			echo "<form style='display: inline; float: right;' method='post' action='".WEBSITE."/index.php/forum/reply/".$thread[0]['id']."'><textarea style='display: none;' name='post'><quote>Quote <b>".$post['author']."</b> ".$post['text']."</quote><br /></textarea><input type='image' src='".WEBSITE."/public/images/forum/quote.png'></form>";
+			if($ide->isLogged()) {
 				if(in_array($post['author'], $characters[0]) or $isModerator == true or $ide->isAdmin() == true) {
 					echo "<a href='#' onClick=\"if(confirm('Are you sure you want to delete this post?')) window.location.href='".WEBSITE."/index.php/forum/delete_post/".$post['id']."';\"><img style='float: right;' src='".WEBSITE."/public/images/false.gif'></a>";
 					echo "<a href='".WEBSITE."/index.php/forum/edit/".$post['id']."'><img src='".WEBSITE."/public/images/forum/edit.png'></a>";
 				}
+			}
 			echo "</div>";
 	echo "</div>";
 }

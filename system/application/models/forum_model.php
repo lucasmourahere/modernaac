@@ -11,7 +11,7 @@ class Forum_model extends Model {
 	
 	public function getBoardInfo($id) {
 		$this->load->database();
-		return @$this->db->query("SELECT `name`, `description`, `id`, `closed`, `moderators`, `requireLogin`, `access` FROM `forums` WHERE `id` = ".$id)->result_array();
+		return @$this->db->query("SELECT `name`, `description`, `id`, `closed`, `moderators`, `requireLogin`, `access` FROM `forums` WHERE `id` = '".$id."'")->result_array();
 	}
 	
 	public function getThreads($id) {
