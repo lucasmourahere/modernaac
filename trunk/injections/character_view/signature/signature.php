@@ -74,6 +74,33 @@
 	// Return false in case a player was not found.
 	if ( !$character->isLoaded( ) )
 		return BASEPATH_SIGNATURE.'images/false-character.png';
+		
+	
+	
+	
+	// Get all the cache images.
+	$cacheImages = scandir( BASEPATH_SIGNATURE.'cache/' );
+	// Loop through all of the cache images.
+	foreach( $cacheImages as $cacheImage )
+	{
+		// Continue along until you find a matching cache image.
+		if ( !preg_match( '/'.$character->getId( ).'_([0-9]{10})\.png/', $cacheImage ) )
+			continue;
+		
+		// Remove the player ID from the filename.
+		$pieces = explode( '_', $cacheImage );
+		// Remove the extension from the file name.
+		$pieces = explode( '.', $pieces[1] );
+		
+		// Check if the lastUpdate + the cache update time is more than the current time.
+		if ( ( $pieces[0] + $config['cache']['signatures'] ) > time( ) )
+		{
+			// Send the headers.
+			header( 'Content-type: image/png' );
+			// Include the cache file.
+			return include( BASEPATH_SIGNATURE.'cache/'.$cacheImage );
+		}
+	}
 	
 	
 	// Player Name
@@ -159,45 +186,6 @@
 		}
 	}
 	
-	
-	// Get all the cache images.
-	$cacheImages = scandir( BASEPATH_SIGNATURE.'cache/' );
-	// Loop through all of the cache images.
-	foreach( $cacheImages as $cacheImage )
-	{
-		// Continue along until you find a matching cache image.
-		if ( !preg_match( '/'.$character->getId( ).'_([0-9]{10})\.png/', $cacheImage ) )
-			continue;
-		
-		// Remove the player ID from the filename.
-		$pieces = explode( '_', $cacheImage );
-		// Remove the extension from the file name.
-		$pieces = explode( '.', $pieces[1] );
-		
-		// Check if the lastUpdate + the cache update time is more than the current time.
-		if ( ( $pieces[0] + $config['cache']['signatures'] ) > time( ) )
-		{
-			// Send the headers.
-			header( 'Content-type: image/png' );
-			// Include the cache file.
-			return include( BASEPATH_SIGNATURE.'cache/'.$cacheImage );
-		}
-		else
-		{
-			$time = time( );
-			
-			// Otherwise, remove the cache file and create a new one.
-			unlink( BASEPATH_SIGNATURE.'cache/'.$cacheImage );
-			// Display the outcome of the generated signature.
-			$MadGD->display( BASEPATH_SIGNATURE.'cache/'.$character->getId( ).'_'.$time.'.png' );
-			
-			// Send the headers.
-			header( 'Content-type: image/png' );
-			// Include the cache file.
-			return include( BASEPATH_SIGNATURE.'cache/'.$character->getId( ).'_'.$time.'.png' );
-		}
-		break;
-	}
 
 	$time = time( );
 	
