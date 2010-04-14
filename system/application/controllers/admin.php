@@ -3,6 +3,7 @@
 class Admin extends Controller {
 	
 	public function index() {
+		$this->output->enable_profiler(TRUE);
 		$ide = new IDE;
 		$ide->requireAdmin();
 		$this->load->view("admin_menu");
@@ -186,6 +187,14 @@ class Admin extends Controller {
 		if(count($thread) == 0) $ide->redirect(WEBSITE."/index.php/admin/forum");
 		$this->forum_model->deleteBoard($id);
 		$ide->redirect(WEBSITE."/index.php/admin/forum");
+	}
+	
+	public function test() {
+		$this->config->load("../../../config");
+		echo $this->config->item('newsLimit');
+		$this->config->set_item('newsLimit', '30');
+		echo "<br>";
+		echo $this->config->item('newsLimit');
 	}
 }
 

@@ -19,7 +19,7 @@ class Forum extends Controller {
 	public function board($id = null) {
 		require("config.php");
 		$ide = new IDE;
-		if(empty($id)) $ide->redirect(WEBSITE."/index.php/forum", 0.01);
+		if($id == null) $ide->criticalRedirect(WEBSITE."/index.php/forum");
 		$this->load->model("forum_model");
 		$data = array();
 		$this->load->library('pagination');
@@ -42,7 +42,7 @@ class Forum extends Controller {
 	public function thread($id = null) {
 		require("config.php");
 		$ide = new IDE;
-		if(empty($id)) $ide->redirect(WEBSITE."/index.php/forum", 0.01);
+		if(empty($id)) $ide->CriticalRedirect(WEBSITE."/index.php/forum");
 		$this->load->model("forum_model");
 		$data = array();
 		$data['thread'] = $this->forum_model->getThreadInfo($id);
@@ -56,8 +56,10 @@ class Forum extends Controller {
 		$data['id'] = $id;
 		$data['pages'] = $this->pagination->create_links();
 		$data['posts'] = $this->forum_model->getPosts($id);
-		$data['characters'] = $this->forum_model->getCharacters();
-		$data['isModerator'] = $this->forum_model->isModerator($data['board'][0]['moderators'], $data['characters']);
+		if($ide->isLogged()) {
+			$data['characters'] = $this->forum_model->getCharacters();
+			$data['isModerator'] = $this->forum_model->isModerator($data['board'][0]['moderators'], $data['characters']);
+		}
 		$this->load->view("forum_view_thread", $data);
 	}
 	
@@ -92,7 +94,7 @@ class Forum extends Controller {
 	public function new_thread($id = null) {
 		$ide = new IDE;
 		$ide->requireLogin();
-		if(empty($id)) $ide->redirect(WEBSITE."/index.php/forum");
+		if(empty($id)) $ide->criticalRedirect(WEBSITE."/index.php/forum");
 		$this->load->model("forum_model");
 		$this->load->library("form_validation");
 		$data = array();
