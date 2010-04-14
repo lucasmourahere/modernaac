@@ -16,6 +16,8 @@ class Account_model extends Model {
 			$_SESSION['access'] = $row['page_access'];
 				if($row['page_access'] >= $config['adminAccess'])
 					$_SESSION['admin'] = 1;
+				else
+					$_SESSION['admin'] = 0;
 			}
 		if($sql->num_rows == 0) return false; else return true;
 	}

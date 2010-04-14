@@ -53,5 +53,10 @@ class IDE{
 		DEFINE("SYSTEM_STOP", 1);
 	}
 	
+	public function criticalRedirect($url) {
+		echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
+		exit;
+	}
+	
 }
 ?>

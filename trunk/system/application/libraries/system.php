@@ -74,7 +74,7 @@ function ago( $timestamp )
 				$interval = 'h';
 			elseif ( $difference >= 60 * 60 * 24 and $difference < 60 * 60 * 24 * 7 )
 				$interval = 'd';
-			elseif ( $difference >= 60 * 60 * 60 * 7 and $difference < 60 * 60 * 24 * 30 )
+			elseif ( $difference >= 60 * 60 * 24 * 7 and $difference < 60 * 60 * 24 * 30 )
 				$interval = 'w';
 			elseif ( $difference >= 60 * 60 * 24 * 30 and $difference < 60 * 60 * 24 * 365 )
 				$interval = 'm';
@@ -158,6 +158,31 @@ function loadConfig($file) {
 function connection() {
 	loadConfig('database');
 	return array('host' => HOSTNAME, 'user' => USERNAME, 'database' => DATABASE, 'password' => PASSWORD);
+}
+
+function bugtracker_getPriority($id) {
+	$priority = array(1=>"Low", 2=>"Medium", 3=>"High", 4=>"Urgent");
+		if(array_key_exists($id, $priority))
+			return $priority[$id];
+		else
+			return "Error";
+}
+
+function bugtracker_getCategory($id) {
+	$category = array(1=>"Bugs", 2=>"Ideas", 3=>"Problems");
+		if(array_key_exists($id, $category))
+			return $category[$id];
+		else
+			return "Error";
+}
+
+function bugtracker_getPriorityImage($id) {
+	if($id == 1)
+		return "<img src='".WEBSITE."/public/images/bugtracker/low.gif'>";
+	else if($id == 2)
+		return "<img src='".WEBSITE."/public/images/bugtracker/medium.gif'>";
+	else if($id == 3 or $id == 4)
+		return "<img src='".WEBSITE."/public/images/bugtracker/high.gif'>";
 }
 require('IDE/main.php');
 ?>
