@@ -100,6 +100,12 @@
 			// Include the cache file.
 			return include( BASEPATH_SIGNATURE.'cache/'.$cacheImage );
 		}
+		else
+		{
+			// Remove the current cache file.
+			unlink( BASEPATH_SIGNATURE.'cache/'.$cacheImage );
+			break;
+		}
 	}
 	
 	
