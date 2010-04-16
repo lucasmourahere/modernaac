@@ -108,6 +108,8 @@ $config['timeBetweenPosts'] = 30;
 /*Limit of submissions per page in bug tracker*/
 $config['bugtrackerPageLimit'] = 10;
 
+/*Default timezone*/
+$config['timezone'] = "Europe/London";
 
 /*
 ######################################################################################################################

@@ -1,16 +1,16 @@
-<?php /* Smarty version Smarty3-b7, created on 2010-04-08 19:55:17
+<?php /* Smarty version Smarty3-b7, created on 2010-04-11 15:12:05
          compiled from "templates/default\index.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:317184bbe2695371c14-32659073%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:154484bc1d8b534ff84-83769362%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b9be817a5a300ba6ffac35944909d95e98be7a8e' => 
     array (
       0 => 'templates/default\\index.tpl',
-      1 => 1270752904,
+      1 => 1270995123,
     ),
   ),
-  'nocache_hash' => '317184bbe2695371c14-32659073',
+  'nocache_hash' => '154484bc1d8b534ff84-83769362',
   'function' => 
   array (
   ),
@@ -82,6 +82,8 @@ $_smarty_tpl->decodeProperties(array (
 /index.php/highscores">Highscores</a></li>	
 				<li><a href="<?php echo $_smarty_tpl->getVariable('path')->value;?>
 /index.php/forum">Forum</a></li>		
+				<li><a href="<?php echo $_smarty_tpl->getVariable('path')->value;?>
+/index.php/bugtracker">Bug Tracker</a></li>	
 			</ul>
 		</div>					
 			
