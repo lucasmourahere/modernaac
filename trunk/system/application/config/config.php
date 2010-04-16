@@ -54,7 +54,7 @@ $config['uri_protocol']	= $config['engine']['uri_protocol'];
 | http://codeigniter.com/user_guide/general/urls.html
 */
 
-$config['url_suffix'] = "";
+$config['url_suffix'] = $config['engine']['url_suffix'];
 
 /*
 |--------------------------------------------------------------------------

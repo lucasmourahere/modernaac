@@ -36,8 +36,8 @@
 	require( BASEPATH_SYSTEM.'system.php' );
 	// Include the configuration file.
 	require( BASEPATH.'config.php' );
-	
-	
+
+	date_default_timezone_set($config['timezone']);
 	// Instantiate a new MadGD object.
 	$MadGD = new MadGD;
 	// Temporarily disable test mode.

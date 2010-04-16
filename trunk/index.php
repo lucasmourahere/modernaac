@@ -55,7 +55,7 @@ require("config.php");
 	$website = $config['website'];
 	
 /* Default time zone for the server must be set here. */
-	date_default_timezone_set("Europe/London");
+	date_default_timezone_set($config['timezone']);
 
 /* Set the default title of a website. */
 	$title = $config['title'];
