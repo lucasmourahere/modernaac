@@ -184,5 +184,12 @@ function bugtracker_getPriorityImage($id) {
 	else if($id == 3 or $id == 4)
 		return "<img src='".WEBSITE."/public/images/bugtracker/high.gif'>";
 }
+
+function getContent($file) {
+	if(file_exists($file))
+		return file_get_contents($file);
+	else
+		return false;
+}
 require('IDE/main.php');
 ?>

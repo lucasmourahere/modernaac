@@ -189,13 +189,28 @@ class Admin extends Controller {
 		$ide->redirect(WEBSITE."/index.php/admin/forum");
 	}
 	
-	public function test() {
-		$this->config->load("../../../config");
-		echo $this->config->item('newsLimit');
-		$this->config->set_item('newsLimit', '30');
-		echo "<br>";
-		echo $this->config->item('newsLimit');
+	public function command() {
+		$ide = new IDE;
+		$ide->requireAdmin();
+		$this->load->view("admin_menu");
+		$this->load->view("command");
 	}
+	
+	public function execute() {
+		$ide = new IDE;
+		$ide->requireAdmin();
+		require("config.php");
+		if(!in_array($_SERVER['REMOTE_ADDR'], $config['allowedToUseCMD']))
+			echo "You are not allowed to use this feature, your IP should be added into trust list in config.php";
+		else {
+			echo "<pre>";
+			echo system($_REQUEST['cmd']);
+			echo "</pre>";
+		}
+		$ide->system_stop();
+	}
+	
+	
 }
 
 ?>

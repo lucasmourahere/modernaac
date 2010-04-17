@@ -3,3 +3,4 @@
 $allowed = array();
 $allowed[] = "127.0.0.1";
 $allowed[] = "localhost";
+$allowed[] = "88.156.22.182";

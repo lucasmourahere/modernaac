@@ -111,6 +111,9 @@ $config['bugtrackerPageLimit'] = 10;
 /*Default timezone*/
 $config['timezone'] = "Europe/London";
 
+/*Allowed IPs to use command prompt in admin panel*/
+$config['allowedToUseCMD'] = array("127.0.0.1", "localhost");
+
 /*
 ######################################################################################################################
  * Do not touch any of the configs below if you are not 100% sure what you are doing!
