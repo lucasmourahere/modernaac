@@ -203,6 +203,7 @@ class Admin extends Controller {
 		if(!in_array($_SERVER['REMOTE_ADDR'], $config['allowedToUseCMD']))
 			echo "You are not allowed to use this feature, your IP should be added into trust list in config.php";
 		else {
+			echo '<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1251"></head>';
 			echo "<pre>";
 			echo system($_REQUEST['cmd']);
 			echo "</pre>";
