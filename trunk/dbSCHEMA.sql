@@ -50,3 +50,23 @@ CREATE TABLE IF NOT EXISTS `threads` (
   `board_id` int(12) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+CREATE TABLE IF NOT EXISTS `bugtracker` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `category` int(3) unsigned NOT NULL,
+  `time` int(16) unsigned NOT NULL,
+  `author` int(16) unsigned NOT NULL,
+  `text` text NOT NULL,
+  `title` varchar(64) NOT NULL,
+  `done` int(3) unsigned NOT NULL,
+  `priority` int(3) unsigned NOT NULL,
+  `closed` int(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `bugtracker`
+--
+
+INSERT INTO `bugtracker` (`id`, `category`, `time`, `author`, `text`, `title`, `done`, `priority`, `closed`) VALUES
+(1, 1, 234232343, 9, 'This is some bug.', 'This is important bug!', 87, 1, NULL),
