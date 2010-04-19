@@ -1,0 +1,257 @@
+label{ 
+float: left; 
+width: 120px; 
+font-weight: bold; 
+margin-top: 2px; 
+} 
+
+input, textarea{ 
+margin-bottom: 5px; 
+} 
+.sub{ 
+margin-left: 120px; 
+margin-top: 5px; 
+width: 90px; 
+} 
+
+
+.bar { 
+font-weight: bold; 
+margin-top: 5px; 
+margin-left: 10px; 
+font-size: 12px; 
+} 
+
+.toolbar { 
+    padding: 10px; 
+    border: 1px solid silver; 
+    font-weight: bold; 
+    margin-bottom: 15px; 
+} 
+
+.highlight:hover { 
+    background-color: lightyellow; 
+    padding: 3px; 
+} 
+
+.newsTitle { 
+    padding: 5px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    border-bottom: 1px solid silver; 
+} 
+
+.newsBody { 
+    padding: 5px; 
+} 
+
+.newsFooter { 
+    padding-left: 5px; 
+    font-size: 10px; 
+} 
+
+.news { 
+    margin-bottom: 15px; 
+} 
+
+.readArchive { 
+    text-align: center; 
+    font-weight: bold; 
+} 
+
+.viewComments { 
+    padding-left: 5px; 
+    font-family: tahoma; 
+} 
+
+.comment { 
+    margin-bottom: 10px; 
+    border: 1px solid silver; 
+    padding: 5px; 
+} 
+
+.commentBody { 
+    margin-bottom: 5px; 
+    padding-bottom: 5px; 
+    border-bottom: 1px dotted silver; 
+} 
+
+.commentFooter { 
+    font-family: tahoma; 
+    font-size: 12px; 
+} 
+
+.leftBoard { 
+    float: left; 
+    width: 64%; 
+} 
+
+.rightBoard { 
+    float: left; 
+} 
+
+.forumBoard { 
+    padding: 3px; 
+    margin-bottom: 5px; 
+    border-top: 1px dotted silver; 
+} 
+
+.boardTitle { 
+    font-weight: bold; 
+    font-size: 13px; 
+    font-family: tahoma; 
+} 
+
+.boardDescription { 
+    padding: 4px; 
+    float: left; 
+} 
+
+.boardStatus { 
+    float: left; 
+    width: 50px; 
+} 
+
+.boardInformation { 
+    padding: 5px; 
+    border: 1px dashed silver; 
+    margin-bottom: 15px; 
+} 
+
+.boardInformationTitle { 
+    font-weight: bold; 
+    font-size: 13px; 
+    font-family: tahoma; 
+} 
+
+.boardInformationDescription { 
+    padding: 4px; 
+} 
+
+.boardInformationModerators { 
+    font-family: arial; 
+    font-size: 11px; 
+} 
+
+.threadTable { 
+    margin-bottom: 10px; 
+    padding: 3px; 
+} 
+
+.threadStatus { 
+    float: left; 
+    width: 30px; 
+} 
+
+.threadLeft { 
+    float: left; 
+    width: 70%; 
+} 
+
+.threadTitle { 
+    font-weight: bold; 
+} 
+
+.boardPages { 
+    text-align: center; 
+} 
+
+.threadTable { 
+    padding: 3px; 
+    border-top: 1px dotted silver; 
+    padding-top: 5px; 
+    margin-top: 20px; 
+} 
+
+.forumPost { 
+    padding: 5px; 
+    margin-bottom: 10px; 
+    border-bottom: 1px solid silver; 
+} 
+
+.forumPostDate { 
+    font-family: tahoma; 
+    padding: 2px; 
+} 
+
+.forumPostLeft { 
+padding: 5px; 
+valign: top; 
+border-right: 1px solid silver; 
+} 
+
+.forumPostAuthor { 
+    font-weigh: bold; 
+} 
+
+.forumPostRight { 
+    valign: top; 
+    padding-left: 10px; 
+} 
+
+.forumHistory { 
+    font-weight: bold; 
+    padding: 3px; 
+} 
+
+.forumPostText { 
+    border-bottom: 1px dotted silver; 
+} 
+
+.postToolBar form { 
+    background: none; 
+    text-align: right; 
+    padding-top: 5px; 
+    bordr: none; 
+    margin: 0px; 
+} 
+
+quote { 
+    padding: 4px; 
+    border: 1px solid silver; 
+} 
+
+.moderatingPanel { 
+    border: 1px solid silver; 
+    padding: 5px; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+} 
+
+.postTitle { 
+    font-weight: bold; 
+    margin-left: 16%; 
+    border-bottom: 1px dotted silver; 
+} 
+
+.bugtrackerProgressBar { 
+    width: 100px; 
+    height: 8px; 
+    border: 1px solid silver; 
+} 
+
+.bugtrackerProgress { 
+    float: left; 
+    height: 8px; 
+    background: lightgreen; 
+} 
+
+.bugtrackerRow { 
+    font-family: tahoma; 
+} 
+
+.bugtrackerBugTable { 
+    padding: 5px; 
+    border: 1px solid silver; 
+     
+} 
+
+.bugtrackerTitle { 
+    font-size: 15px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+} 
+
+.bugtrackerAttr { 
+     
+}  
