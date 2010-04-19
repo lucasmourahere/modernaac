@@ -152,7 +152,7 @@ $smarty->config_dir = ' configs';
 $smarty->cache_dir = 'cache';
 $smarty->compile_dir = 'compile';
 @$logged = ($_SESSION['logged'] == 1) ? 1 : 0;
-$head = '<link type="text/css" href="'.$website.'/public/css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" /><script type="text/javascript" src="'.$website.'/public/js/jquery-1.3.2.min.js"></script><script type="text/javascript" src="'.$website.'/public/js/jquery-ui-1.7.2.custom.min.js"></script>';
+$head = '<link type="text/css" href="'.$website.'/public/css/system.css" rel="stylesheet" /><link type="text/css" href="'.$website.'/public/css/smoothness/jquery-ui-1.7.2.custom.css" rel="stylesheet" /><script type="text/javascript" src="'.$website.'/public/js/jquery-1.3.2.min.js"></script><script type="text/javascript" src="'.$website.'/public/js/jquery-ui-1.7.2.custom.min.js"></script>';
 $smarty->assign('head', $head);
 $smarty->assign('path', $website);
 $smarty->assign('template_path', $website.'/templates/'.$config['layout']);
