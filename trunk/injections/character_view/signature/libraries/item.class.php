@@ -246,10 +246,11 @@
 		fclose( $spr );
 		/* CLOSE SPR */
 
-		if ( $count > 1 )
+		if ( $mycount > 1 )
 		{
 			$folder = explode( '/', $newImagePath );
-			$folder = $folder[0].'/'.$folder[1].'/'.$folder[2].'/';
+			unset( $folder[count( $folder )-1] );
+			$folder = implode( '/', $folder );
 			if ( !file_exists( $folder ) )
 			{
 				mkdir( $folder );
