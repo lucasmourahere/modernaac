@@ -12,7 +12,7 @@
 	// Create an empty config array.
 	$config = array( );
 	// Set the cache life time.
-	$config['cache']['signatures'] = 60 * 30;
+	$cacheTime = 60 * 30;
 	
 	
 	
@@ -99,7 +99,7 @@
 		$pieces = explode( '.', $pieces[1] );
 		
 		// Check if the lastUpdate + the cache update time is more than the current time.
-		if ( ( $pieces[0] + $config['cache']['signatures'] ) > time( ) )
+		if ( ( $pieces[0] + $cacheTime ) > time( ) )
 		{
 			// Send the headers.
 			header( 'Content-type: image/png' );
@@ -136,10 +136,17 @@
 	$MadGD->addText( $config['cities'][$character->getTownId( )] )->setPosition( ); $row++;
 	// Player House
 	$house = $SQL->query( 'SELECT `name`, `town` FROM `houses` WHERE `world_id` = '.$character->getWorld( ).' AND `owner` = '.$character->getId( ).';' )->fetch();
-	if ( $house )
+	if ( $house != null )
 	{
 		$MadGD->addText( 'House:', $MadGD->textBold )->setPosition( 10, $row * $height );
-		$MadGD->addText( $house['name'].' ('.$config['cities'][$house['town']].')' )->setPosition( ); $row++;
+		if ( array_key_exists( $house['town'], $config['cities'] ) )
+		{
+			$MadGD->addText( $house['name'].' ('.$config['cities'][$house['town']].')' )->setPosition( ); $row++;
+		}
+		else
+		{
+			$MadGD->addText( $house['name'] )->setPosition( ); $row++;
+		}
 	}
 	// Player Guild
 	if ( $character->getRank() != null )
@@ -167,20 +174,14 @@
 	foreach( $slots as $pid => $name )
 	{
 		// Run a SQL query to fetch the slot items.
-		$item = $SQL->query( 'SELECT `itemtype`, `attributes` FROM `player_items` WHERE `player_id` = '.$character->getId( ).' AND `pid` = '.$pid.';' )->fetch( );
+		$item = $SQL->query( 'SELECT `itemtype`, `count` FROM `player_items` WHERE `player_id` = '.$character->getId( ).' AND `pid` = '.$pid.';' )->fetch( );
 		// Continue to the next slot item in case there is no item at the current slot.
 		if ( $item['itemtype'] == null )
 			continue;
 			
 		// Set the default count to one.
-		$count = 1;
+		$count = ( $item['count'] > 0 ? $item['count'] : 1 );
 		
-		// Unpack the attributes to fetch the item count.
-		$attributes = unpack( 'C*', $item['attributes'] );
-		// Change the count in case it was higher than one.
-		if ( isset( $attributes[2] ) )
-			$count = $attributes[2];
-			
 		// Set the image path.
 		$imagePath = FCPATH.'public/images/items/'.( $count > 1 ? $item['itemtype'].'/'.$count : $item['itemtype'] ).'.gif';
 		// Create an image in case the current image does not exist already.
@@ -199,7 +200,6 @@
 		}
 	}
 	
-
 	$time = time( );
 	
 	// Display the outcome of the generated signature.
